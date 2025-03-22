@@ -155,6 +155,114 @@ nav {
   margin-inline: auto;
 }
 
+
+/* work section */
+#work {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+              url('assets/work-pic.jpg') center/cover no-repeat fixed;
+  color: var(--white);
+  padding: 7rem 0;
+}
+#work .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+#work .title {
+  margin-bottom: 5rem;
+}
+#work .title h2 {
+  font-size: 2rem; 
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-family: var(--header-font);
+  position: relative;
+  color: var(--white);
+}
+#work .title h2::after {
+  position: absolute;
+  content: "";
+  top: 120%;
+  left: 0;
+  width: 70px;
+  height: 4px;
+  background-color: var(--white);
+}
+#work .work-content ul.work-top {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+#work .work-content ul.work-top li.lead {
+  opacity: 0.9;
+  padding: 1rem 0 1rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--white);
+  position: relative;
+}
+#work .work-content ul.work-top li.lead i {
+  position: absolute;
+  top: 1.2rem;
+  left: 0;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.work-bottom {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+.work-bottom > div {
+  transition: 0.3s ease;
+}
+.work-bottom > div:hover {
+  transform: scale(0.95);
+}
+.work-bottom > div .icon img {
+  width: 50px;
+  margin: 0 auto 1.7rem auto;
+}
+.work-bottom > div h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+#work .btn-down {
+  font-size: 3rem;
+  display: inline-block;
+  margin-top: 4rem;
+  transition: 0.3s;
+  color: var(--white);
+}
+#work .btn-down:hover {
+  opacity: 0.8;
+  transform: translateY(5px);
+}
+
+/* Media Queries */
+@media (min-width: 450px) {
+  .work-bottom {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  #work .work-content ul.work-top {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6rem;
+  }
+  .work-bottom {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
 .portfolio__grid {
   margin-top: 2rem;
   display: grid;
@@ -389,6 +497,91 @@ nav {
   transition: 0.3s;
 }
 
+#contact {
+  padding: 5rem 1rem;
+  background-color: #f8f8f8;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact-left {
+  max-width: 600px;
+  text-align: center;
+}
+
+.contact-left h2 {
+  font-family: var(--header-font);
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.contact-left p.lead {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.contact-left form {
+  margin-top: 2rem;
+}
+
+.contact-left form .form-control {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.contact-left .btn-submit {
+  background-color: var(--text-dark);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-left .btn-submit:hover {
+  background-color: #000;
+}
+
+.contact-right img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .contact-content {
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .contact-left {
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-right img {
+    max-width: 80%;
+  }
+}
+
+
 
 @keyframes scroll {
   to {
@@ -575,3 +768,149 @@ nav {
     gap: 2rem;
   }
 }
+
+/* Chat bot */
+
+.bot-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.chatbot-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-size: 28px;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 300px;
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 99;
+  display: none;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.chatbot-container.show {
+  display: flex;
+}
+
+.chatbot-header {
+  padding: 1rem;
+  background-color: var(--text-dark);
+  color: var(--white);
+  text-align: center;
+}
+
+.chatbot-header h4 {
+  margin-bottom: 0.25rem;
+  font-family: var(--header-font);
+}
+
+.chatbot-messages {
+  padding: 1rem;
+  height: 250px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.chatbot-messages p {
+  margin-bottom: 0.8rem;
+}
+
+.chatbot-messages .user {
+  text-align: right;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.chatbot-messages .bot {
+  text-align: left;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+}
+
+.chatbot-input button {
+  background-color: var(--text-dark);
+  color: var(--white);
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chatbot-input button:hover {
+  background-color: var(--text-light);
+}
+
+
+.typing {
+  font-style: italic;
+  color: gray;
+}
+/* pricing card - start */
+
+.pricing-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-card button {
+  background-color: var(--text-dark);
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  margin-top: 0.6rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pricing-card button:hover {
+  background-color: var(--text-light);
+}
+
+/* pricing card - end */
